@@ -12,17 +12,32 @@ if (numberM < 1 || numberN < 1)
 
 PrintRangeNaturalNumbers(numberM, numberN);
 
+// void PrintRangeNaturalNumbers(int numM, int numN)
+// {
+//     if (numM < numN)
+//     {
+//         Console.Write($"{numM} ");
+//         PrintRangeNaturalNumbers(numM + 1, numN);
+//     }
+//     else if (numM > numN)
+//     {
+//         Console.Write($"{numM} ");
+//         PrintRangeNaturalNumbers(numM - 1, numN);
+//     }
+//     else Console.Write($"{numM} ");
+// }
+
 void PrintRangeNaturalNumbers(int numM, int numN)
 {
     if (numM < numN)
     {
-        Console.Write($"{numM} ");
-        PrintRangeNaturalNumbers(numM + 1, numN);
+        PrintRangeNaturalNumbers(numM, numN - 1);
+        Console.Write($"{numN} ");
     }
     else if (numM > numN)
     {
-        Console.Write($"{numM} ");
-        PrintRangeNaturalNumbers(numM - 1, numN);
+        PrintRangeNaturalNumbers(numM, numN + 1);
+        Console.Write($"{numN} ");
     }
-    else Console.Write($"{numM} ");
+    else Console.Write($"{numN} ");
 }
