@@ -2,21 +2,29 @@
 // N = 5 -> "5, 4, 3, 2, 1"
 // N = 8 -> "8, 7, 6, 5, 4, 3, 2, 1"
 
-Console.WriteLine("Введите натуральное число: ");
-int number = Convert.ToInt32(Console.ReadLine());
-
-if (number < 1)
+internal class Program
 {
-    Console.WriteLine("Некорректный ввод!");
-    return;
-}
+    private static void Main(string[] args)
+    {
+        Console.WriteLine("Введите натуральное число: ");
+        int number = Convert.ToInt32(Console.ReadLine());
 
-Console.Write($"N = {number} -> ");
-PrintNaturalNumbers(number);
+        if (number < 1)
+        {
+            Console.WriteLine("Некорректный ввод!");
+            return;
+        }
 
-void PrintNaturalNumbers(int num)
-{
-    if (num == 0) return;
-    Console.Write($"{num} ");
-    PrintNaturalNumbers(num - 1);
+        Console.Write($"N = {number} -> \"");
+        PrintNaturalNumbers(number);
+        Console.Write($"\"");
+
+        void PrintNaturalNumbers(int num)
+        {
+            if (num == 0) return;
+            if (num == 1) Console.Write($"{num}");
+            else Console.Write($"{num}, ");
+            PrintNaturalNumbers(num - 1);
+        }
+    }
 }
