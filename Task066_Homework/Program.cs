@@ -27,5 +27,5 @@ int SumNaturalNumbers(int numM, int numN)
     {
         return numM + SumNaturalNumbers(numM - 1, numN);
     }
-    else return numM;
+    return numM;
 }
