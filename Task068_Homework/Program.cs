@@ -15,7 +15,7 @@ if (numberM < 0 || numberN < 0)
 }
 
 int result = AckermanFunction(numberM, numberN);
-Console.WriteLine(result);
+Console.WriteLine($"m = {numberM}, n = {numberN} -> A(m,n) = {result}");
 
 int AckermanFunction(int numM,int numN)
 {
